@@ -10,6 +10,7 @@ export default function Register() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
+    name: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -26,7 +27,7 @@ export default function Register() {
     e.preventDefault();
     setError(null);
 
-    if (!formData.email || !formData.password || !formData.confirmPassword) {
+    if (!formData.name || !formData.email || !formData.password || !formData.confirmPassword) {
       // setError('Please fill in all fields');
       toast.error('Please fill in all fields');
       return;
@@ -46,8 +47,7 @@ export default function Register() {
 
     try {
       setLoading(true);
-      await register(formData.email, formData.password);
-      // alert('Account created successfully! Please sign in.');
+      await register(formData.name, formData.email, formData.password);
       toast.success('Account created successfully! Please sign in.');
       navigate('/login');
     } catch (err) {
@@ -72,6 +72,22 @@ export default function Register() {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+              <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                Name
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full pl-4 pr-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Your name"
+                />
+              </div>
+            </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
                 Email
