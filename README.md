@@ -157,7 +157,7 @@ Mini-Event-Finder/
 
 Frontend on Vercel 
 
-Backend on Render or Railway
+Backend on Render 
 
 Database on MongoDB Atlas
 
@@ -169,5 +169,3 @@ This project helped me understand full-stack development, API integration, and U
 **Mini Event Finder** is a great example of using React and Node.js together to build a simple, functional, and responsive event-based web application.
 
 ---
-
-Would you like me to generate this as a **downloadable `README.md` file** now?
