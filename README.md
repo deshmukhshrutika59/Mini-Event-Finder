@@ -153,13 +153,11 @@ Mini-Event-Finder/
 
 ---
 
-## 🌐 Deployment (Optional)
+## 🌐 Deployment
 
-You can host it easily using:
-
-* **Frontend:** Vercel 
-* **Backend:** Render 
-* **Database:** MongoDB Atlas
+Frontend on Vercel 
+Backend on Render or Railway
+Database on MongoDB Atlas
 
 ---
 
