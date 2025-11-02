@@ -156,7 +156,9 @@ Mini-Event-Finder/
 ## 🌐 Deployment
 
 Frontend on Vercel 
+
 Backend on Render or Railway
+
 Database on MongoDB Atlas
 
 ---
