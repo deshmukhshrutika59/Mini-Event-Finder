@@ -1,138 +1,139 @@
 
 # 🎉 Mini Event Finder
 
-Mini Event Finder is a full-stack web application built with **React (TypeScript)** for the frontend and **Node.js (Express + MongoDB)** for the backend.  
-It allows users to discover, create, and register for local events seamlessly. The app features authentication, event management, search functionality, and responsive design.
+**Mini Event Finder** is a simple full-stack web application where users can explore, create, and register for events happening nearby.
+It’s built with **React (TypeScript)** on the frontend and **Node.js + Express + MongoDB** on the backend.
+
+The project focuses on building a clean and responsive user interface, authentication, and easy event management — perfect for small college/community events.
 
 ---
 
 ## 🚀 Features
 
-- 🔐 **User Authentication (Login & Register)**
-- 🎟️ **Create, View, and Manage Events**
-- 🔍 **Search Events by Name or Location**
-- ⏰ **Date and Time Picker for Events**
-- 🧭 **Logout Session Management**
-- 🎉 **Toast Notifications (Success, Error, Info)**
-- 📱 **Responsive Design (Mobile-Friendly)**
+* 🔐 User authentication (register & login)
+* 🎟️ Create and view local events
+* 🔍 Search events by name or location
+* ⏰ Date and time picker for scheduling events
+* 🧭 Session-based login/logout
+* 🔔 Toast notifications for all actions (success/error/info)
+* 📱 Fully responsive (works on mobile & desktop)
 
 ---
 
 ## 🧩 Tech Stack
 
-### Frontend:
-- React (TypeScript)
-- TailwindCSS v4
-- React Router DOM
-- Axios
-- React Toastify
+### Frontend
 
-### Backend:
-- Node.js + Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- bcrypt for Password Hashing
-- dotenv for Environment Variables
-- CORS Enabled
+* React + TypeScript
+* TailwindCSS (v4)
+* React Router DOM
+* Axios
+* React Toastify
+
+### Backend
+
+* Node.js + Express.js
+* MongoDB + Mongoose
+* JWT Authentication
+* bcrypt for password hashing
+* dotenv for environment variables
+* CORS enabled
 
 ---
 
-## ⚙️ Setup Instructions
+## ⚙️ How to Run the Project
 
 ### 1️⃣ Clone the Repository
+
 ```bash
-git clone https://github.com/yourusername/mini-event-finder.git
-cd mini-event-finder
+git clone https://github.com/deshmukhshrutika59/Mini-Event-Finder.git
+cd Mini-Event-Finder
 ```
 
+---
+
 ### 2️⃣ Backend Setup
+
 ```bash
 cd backend
 npm install
 ```
-Create a `.env` file or copy the provided example:
+
+Create a `.env` file inside `/backend` and add:
+
 ```bash
-cp .env.example .env
-```
-Start the backend server:
-```bash
-npm start
-```
-The backend runs on: **http://localhost:5000**
-
-### 3️⃣ Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
-The frontend runs on: **http://localhost:5173**
-
----
-
-## 🔑 Environment Variables
-
-Create a `.env` file inside the `backend/` directory:
-
-```
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 ```
 
-Also include a `.env.example` for documentation purposes.
+Then start the backend:
+
+```bash
+npm start
+```
+
+Backend runs on **[http://localhost:5000](http://localhost:5000)**
 
 ---
 
-## 📡 API Documentation
+### 3️⃣ Frontend Setup
 
-| Endpoint | Method | Description |
-|-----------|---------|-------------|
-| `/api/auth/register` | POST | Register a new user |
-| `/api/auth/login` | POST | Login user |
-| `/api/events` | GET | Get all events |
-| `/api/events` | POST | Create a new event |
-| `/api/events/:id` | GET | Get event by ID |
-| `/api/events/:id` | DELETE | Delete an event |
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
----
-
-## 📷 Screenshots / Demo Video
-
-(Optional – Add screenshots or Loom video link here)
+Frontend runs on **[http://localhost:5173](http://localhost:5173)**
 
 ---
 
-## 🧠 Challenges Faced & Solutions
+## 🔑 API Endpoints
 
-| Challenge | Solution |
-|------------|-----------|
-| Integrating TailwindCSS v4 | Installed `@tailwindcss/postcss` and updated PostCSS config |
-| Backend Authentication | Implemented JWT-based login system |
-| State Management | Used React hooks (`useState`, `useEffect`) efficiently |
-| Event Search Feature | Added filter functionality based on event name & location |
-| Deployment Issues | Configured Vite build and CORS properly |
-
----
-
-## 🤖 AI Tools Used
-
-| Tool | Usage |
-|------|--------|
-| ChatGPT (OpenAI GPT-5) | Assisted in code debugging, API design, and project structuring |
-| GitHub Copilot | Provided inline code suggestions |
-| Vite | Used for fast frontend build setup |
+| Method | Endpoint             | Description         |
+| ------ | -------------------- | ------------------- |
+| POST   | `/api/auth/register` | Register a new user |
+| POST   | `/api/auth/login`    | Login existing user |
+| GET    | `/api/events`        | Fetch all events    |
+| POST   | `/api/events`        | Create new event    |
+| GET    | `/api/events/:id`    | Get single event    |
+| DELETE | `/api/events/:id`    | Delete event        |
 
 ---
 
-## 📦 Project Structure
+## 🧠 Challenges Faced
+
+| Challenge                           | Solution                                                  |
+| ----------------------------------- | --------------------------------------------------------- |
+| TailwindCSS v4 setup issue          | Installed `@tailwindcss/postcss` and fixed PostCSS config |
+| JWT Authentication errors           | Added middleware for token validation                     |
+| Event search not updating instantly | Used React state and `useEffect` for dynamic search       |
+| Toasts not showing in some cases    | Wrapped app with ToastContainer properly                  |
+
+---
+
+## 🤖 AI Tools & Resources Used
+
+| Tool                       | Usage                                                        |
+| -------------------------- | ------------------------------------------------------------ |
+| **ChatGPT (OpenAI GPT-5)** | Helped debug and structure backend + frontend logic          |
+| **GitHub Copilot**         | Provided inline code suggestions                             |
+| **Cursor AI**              | Used for quick debugging, code explanations, and refactoring |
+| **Vite**                   | Used for fast frontend setup                                 |
+
+---
+
+## 📦 Folder Structure
 
 ```
-mini-event-finder/
+Mini-Event-Finder/
+│
 ├── backend/
 │   ├── controllers/
 │   ├── models/
 │   ├── routes/
+│   ├── middleware/
 │   ├── server.js
 │   └── .env.example
 │
@@ -152,19 +153,21 @@ mini-event-finder/
 
 ---
 
-## 🌐 Deployment
+## 🌐 Deployment (Optional)
 
-You can deploy using:
-- Frontend → **Vercel / Netlify**
-- Backend → **Render / Railway / Cyclic**
-- Database → **MongoDB Atlas**
+You can host it easily using:
+
+* **Frontend:** Vercel 
+* **Backend:** Render 
+* **Database:** MongoDB Atlas
 
 ---
-
 
 ## 🏁 Conclusion
 
-Mini Event Finder is a modern, scalable web application designed to make event discovery and participation effortless.  
-The project demonstrates **full-stack development, RESTful API integration, authentication**, and **frontend design skills** — a great addition to your portfolio!
+This project helped me understand full-stack development, API integration, and UI design better.
+**Mini Event Finder** is a great example of using React and Node.js together to build a simple, functional, and responsive event-based web application.
 
 ---
+
+Would you like me to generate this as a **downloadable `README.md` file** now?
