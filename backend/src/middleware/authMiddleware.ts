@@ -15,8 +15,9 @@ export const protect = async (req: AuthRequest, res: Response, next: NextFunctio
 
   const token = authHeader.split(" ")[1];
   try {
-    const payload = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string };
-    const user = await User.findById(payload.userId).select("-password");
+    const payload = jwt.verify(token, process.env.JWT_SECRET!) as { id: string };
+const user = await User.findById(payload.id).select("-password");
+
     if (!user) return res.status(401).json({ message: "User not found" });
 
     req.user = user;
