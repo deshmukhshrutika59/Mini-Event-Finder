@@ -15,6 +15,7 @@ const FRONTEND_URL = process.env.FRONTEND_URL || "https://mini-event-finder-pi.v
 app.use(cors({
   origin: FRONTEND_URL,
   credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
 app.use(express.json());
